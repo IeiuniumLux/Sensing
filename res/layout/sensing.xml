@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <gov.nasa.arc.sensing.CameraPreview
+        android:id="@+id/camera_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/normal_black"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/sensorXLabel"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sensorXValue"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sensorYLabel"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sensorYValue"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ToggleButton
+        android:id="@+id/sendAccelerationDataToggleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:checked="false"
+        android:text="@string/speakOrientationLabel"
+        android:textOff="@string/sendingDataOFF"
+        android:textOn="@string/sendingDataON" />
+
+</FrameLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="@string/udpKey"
+        android:title="UDP" >
+        <EditTextPreference
+            android:defaultValue="@string/default_ipAddress"
+            android:digits="0123456789."
+            android:inputType="numberDecimal"
+            android:key="@string/ipAddressKey"
+            android:summary="Default address 255.255.255.255"
+            android:title="IP Address" />
+        <EditTextPreference
+            android:defaultValue="@string/default_sensorPort"
+            android:key="@string/sensorPortKey"
+            android:numeric="integer"
+            android:summary="Default port 9001"
+            android:title="Sensor Data Port" />
+        <EditTextPreference
+            android:defaultValue="@string/default_cameraPort"
+            android:key="@string/cameraPortKey"
+            android:numeric="integer"
+            android:summary="Default port 9002"
+            android:title="Stream Video Port" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
