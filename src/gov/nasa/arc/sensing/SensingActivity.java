@@ -308,13 +308,14 @@ public class SensingActivity extends Activity implements SensorEventListener {
 
 	/** Check if this device has a camera */
 	private boolean checkCameraHardware(Context context) {
-		if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
-			// this device has a camera
-			return true;
-		} else {
-			// no camera on this device
-			return false;
-		}
+		return false;
+//		if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+//			// this device has a camera
+//			return true;
+//		} else {
+//			// no camera on this device
+//			return false;
+//		}
 	}
 
 	public double roundTwoDecimals(double d) {
@@ -345,7 +346,8 @@ public class SensingActivity extends Activity implements SensorEventListener {
 				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 				isLandscape = true;
 			}
-			mPreview.setCameraDisplayOrientation(isLandscape ? 0 : 90);
+			if (mPreview != null)
+				mPreview.setCameraDisplayOrientation(isLandscape ? 0 : 90);
 			editor.putBoolean("landscapeMode", isLandscape);
 			editor.commit();
 			return true;
