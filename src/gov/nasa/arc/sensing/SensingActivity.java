@@ -308,14 +308,13 @@ public class SensingActivity extends Activity implements SensorEventListener {
 
 	/** Check if this device has a camera */
 	private boolean checkCameraHardware(Context context) {
-		return false;
-//		if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
-//			// this device has a camera
-//			return true;
-//		} else {
-//			// no camera on this device
-//			return false;
-//		}
+		if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+			// this device has a camera
+			return true;
+		} else {
+			// no camera on this device
+			return false;
+		}
 	}
 
 	public double roundTwoDecimals(double d) {
