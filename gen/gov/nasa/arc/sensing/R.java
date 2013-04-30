@@ -143,14 +143,35 @@ public final class R {
         public static final int zAxisLabel=0x7f08000e;
     }
     public static final class style {
-        public static final int appbutton=0x7f090002;
-        public static final int appbuttoninlist=0x7f090003;
-        public static final int appspeechresulttext=0x7f090001;
         /**      <style name="Theme.Gast" parent="@android:Theme"></style> 
      <style name="Theme.Gast" parent="@android:style/Theme.Holo"></style> 
+    
+	<style name="apptext">
+		<item name="android:textSize">12sp</item>
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+	</style>
+
+	<style name="appspeechresulttext" parent="apptext">
+		<item name="android:textColor">@color/normal_black</item>
+	</style>
+
+	<style name="appbutton" parent="apptext">
+	</style>
+
+	<style name="appbuttoninlist" parent="apptext">
+		<item name="android:padding">5dip</item>
+	</style>
+
+	<style name="line_separator">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">2dip</item>
+		<item name="android:color">@color/gray</item>
+		<item name="android:background">@color/gray</item>
+	</style>
+
          */
-        public static final int apptext=0x7f090000;
-        public static final int line_separator=0x7f090004;
+        public static final int Theme_NoBackground=0x7f090000;
     }
     public static final class xml {
         public static final int udp_preferences=0x7f040000;

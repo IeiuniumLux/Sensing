@@ -3,7 +3,7 @@
     
 <!--     <style name="Theme.Gast" parent="@android:Theme"></style> -->
 <!--     <style name="Theme.Gast" parent="@android:style/Theme.Holo"></style> -->
-    
+<!--    
 	<style name="apptext">
 		<item name="android:textSize">12sp</item>
 		<item name="android:layout_width">match_parent</item>
@@ -27,5 +27,9 @@
 		<item name="android:color">@color/gray</item>
 		<item name="android:background">@color/gray</item>
 	</style>
-
+-->
+<style name="Theme.NoBackground" parent="android:Theme">
+    <item name="android:windowBackground">@null</item>
+    <item name="android:windowNoTitle">true</item> 
+</style>
 </resources>

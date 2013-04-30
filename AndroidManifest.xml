@@ -35,7 +35,7 @@
             android:name=".SensingActivity"
             android:configChanges="orientation"
             android:label="@string/activity_title"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            android:theme="@style/Theme.NoBackground" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
