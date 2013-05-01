@@ -11,5 +11,6 @@ Desktop.ini
 *~
 *.apk
 bin
+lib
 gen
 local.properties
