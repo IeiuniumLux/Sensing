@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-<!--     <style name="Theme.Gast" parent="@android:Theme"></style> -->
-<!--     <style name="Theme.Gast" parent="@android:style/Theme.Holo"></style> -->
+
 <!--    
 	<style name="apptext">
 		<item name="android:textSize">12sp</item>
