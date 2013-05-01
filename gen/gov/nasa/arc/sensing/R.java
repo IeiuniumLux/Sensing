@@ -143,9 +143,7 @@ public final class R {
         public static final int zAxisLabel=0x7f08000e;
     }
     public static final class style {
-        /**      <style name="Theme.Gast" parent="@android:Theme"></style> 
-     <style name="Theme.Gast" parent="@android:style/Theme.Holo"></style> 
-    
+        /**     
 	<style name="apptext">
 		<item name="android:textSize">12sp</item>
 		<item name="android:layout_width">match_parent</item>
