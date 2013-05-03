@@ -29,6 +29,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -56,6 +57,8 @@ public class SensingActivity extends Activity implements SensorEventListener {
 	private String host;
 	private int sensorPort;
 	private int cameraPort;
+	
+	private FrameLayout frm;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +88,10 @@ public class SensingActivity extends Activity implements SensorEventListener {
 		setRequestedOrientation((isLandscape) ? ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		if (checkCameraHardware(getApplicationContext())) {
-			mPreview = (CameraPreview) findViewById(R.id.camera_preview);
+			mPreview = new CameraPreview(this);
+			frm=(FrameLayout)findViewById(R.id.frameLayout);
+		    frm.addView(mPreview, 0);
+//			mPreview = (CameraPreview) findViewById(R.id.camera_preview);
 			mPreview.setCameraDisplayOrientation(isLandscape ? 0 : 90);
 		}
 

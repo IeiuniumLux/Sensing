@@ -32,6 +32,13 @@ public class CameraPreview extends SurfaceView implements PreviewCallback, Surfa
 	private String host;
 	private DatagramSocket socket = null;
 
+	public CameraPreview(Context context) {
+		super(context);
+		mHolder = getHolder();
+		mHolder.addCallback(this);
+		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+	}
+	
 	public CameraPreview(Context context, AttributeSet attributeSet) {
 		super(context, attributeSet);
 		mHolder = getHolder();
