@@ -79,7 +79,7 @@ public class SensingActivity extends Activity implements SensorEventListener {
 		// sensorZLabel = (TextView) findViewById(R.id.sensorZLabel);
 		// sensorZValue = (TextView) findViewById(R.id.sensorZValue);
 
-		PreferenceManager.setDefaultValues(this, R.xml.udp_preferences, false);
+		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 		prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		host = prefs.getString(getString(R.string.ipAddressKey), "255.255.255.255");
 		sensorPort = Integer.parseInt(prefs.getString(getString(R.string.sensorPortKey), "9001"));

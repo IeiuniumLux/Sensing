@@ -30,7 +30,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		addPreferencesFromResource(R.xml.udp_preferences);
+		addPreferencesFromResource(R.xml.preferences);
 
 		// Add a validator so the ports and IP address are not empty and only accepts numbers
 		Preference ipAddressPreference = getPreferenceScreen().findPreference(this.getString(R.string.ipAddressKey));
