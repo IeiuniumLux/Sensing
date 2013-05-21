@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.List;
 
 import android.content.Context;
 import android.graphics.ImageFormat;
@@ -102,7 +103,9 @@ public class CameraPreview extends SurfaceView implements PreviewCallback, Surfa
 		// set preview size and make any resize, rotate or
 		// reformatting changes here
 		Camera.Parameters parameters = mCamera.getParameters();
-		parameters.setPreviewSize(WIDTH, HEIGHT);
+		List<Camera.Size> sizes = parameters.getSupportedPreviewSizes();  
+		Camera.Size cs = sizes.get(0);  
+		parameters.setPreviewSize(cs.width, cs.height);
 		parameters.setPreviewFrameRate(30);
 		parameters.setSceneMode(Camera.Parameters.SCENE_MODE_SPORTS);
 		parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
