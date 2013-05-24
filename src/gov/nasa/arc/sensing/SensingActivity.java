@@ -13,8 +13,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -29,7 +29,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -51,14 +50,14 @@ public class SensingActivity extends Activity implements SensorEventListener {
 	private boolean isSendingData;
 	private ToggleButton togglebutton;
 
-	private CameraPreview mPreview;
+//	private CameraPreview mPreview;
 	private boolean isLandscape;
 	private SharedPreferences prefs;
 	private String host;
 	private int sensorPort;
-	private int cameraPort;
+//	private int cameraPort;
 	
-	private FrameLayout frm;
+//	private FrameLayout frm;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,11 +70,17 @@ public class SensingActivity extends Activity implements SensorEventListener {
 		// Get a reference to the sensor service
 		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
+		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/digital_bold.ttf");
+		
 		// Initialize references to the UI views that will be updated in the code
 		sensorXLabel = (TextView) findViewById(R.id.sensorXLabel);
+		sensorXLabel.setTypeface(tf);
 		sensorXValue = (TextView) findViewById(R.id.sensorXValue);
+		sensorXValue.setTypeface(tf);
 		sensorYLabel = (TextView) findViewById(R.id.sensorYLabel);
+		sensorYLabel.setTypeface(tf);
 		sensorYValue = (TextView) findViewById(R.id.sensorYValue);
+		sensorYValue.setTypeface(tf);
 		// sensorZLabel = (TextView) findViewById(R.id.sensorZLabel);
 		// sensorZValue = (TextView) findViewById(R.id.sensorZValue);
 
@@ -83,17 +88,17 @@ public class SensingActivity extends Activity implements SensorEventListener {
 		prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		host = prefs.getString(getString(R.string.ipAddressKey), "255.255.255.255");
 		sensorPort = Integer.parseInt(prefs.getString(getString(R.string.sensorPortKey), "9001"));
-		cameraPort = Integer.parseInt(prefs.getString(getString(R.string.cameraPortKey), "9002"));
+//		cameraPort = Integer.parseInt(prefs.getString(getString(R.string.cameraPortKey), "9002"));
 		isLandscape = prefs.getBoolean("landscapeMode", true);
 		setRequestedOrientation((isLandscape) ? ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-		if (checkCameraHardware(getApplicationContext())) {
-			mPreview = new CameraPreview(this);
-			frm=(FrameLayout)findViewById(R.id.frameLayout);
-		    frm.addView(mPreview, 0);
-//			mPreview = (CameraPreview) findViewById(R.id.camera_preview);
-			mPreview.setCameraDisplayOrientation(isLandscape ? 0 : 90);
-		}
+//		if (checkCameraHardware(getApplicationContext())) {
+//			mPreview = new CameraPreview(this);
+//			frm=(FrameLayout)findViewById(R.id.frameLayout);
+//		    frm.addView(mPreview, 0);
+////			mPreview = (CameraPreview) findViewById(R.id.camera_preview);
+//			mPreview.setCameraDisplayOrientation(isLandscape ? 0 : 90);
+//		}
 
 		togglebutton = (ToggleButton) findViewById(R.id.sendAccelerationDataToggleButton);
 		togglebutton.setOnClickListener(new OnClickListener() {
@@ -108,10 +113,10 @@ public class SensingActivity extends Activity implements SensorEventListener {
 				} catch (Exception exception) {
 					Log.e(TAG, "Error: ", exception);
 				}
-				if (mPreview != null) {
-					mPreview.setUDPSettings(cameraSocket, host, cameraPort);
-					mPreview.setSendingData(isSendingData);
-				}
+//				if (mPreview != null) {
+//					mPreview.setUDPSettings(cameraSocket, host, cameraPort);
+//					mPreview.setSendingData(isSendingData);
+//				}
 			}
 		});
 
@@ -133,9 +138,9 @@ public class SensingActivity extends Activity implements SensorEventListener {
 			sensorSocket.close();
 			sensorSocket = null;
 		}
-		if (mPreview != null) {
-			mPreview.setSendingData(isSendingData);
-		}
+//		if (mPreview != null) {
+//			mPreview.setSendingData(isSendingData);
+//		}
 		if (cameraSocket != null) {
 			cameraSocket.close();
 			cameraSocket = null;
@@ -313,15 +318,15 @@ public class SensingActivity extends Activity implements SensorEventListener {
 	}
 
 	/** Check if this device has a camera */
-	private boolean checkCameraHardware(Context context) {
-		if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
-			// this device has a camera
-			return true;
-		} else {
-			// no camera on this device
-			return false;
-		}
-	}
+//	private boolean checkCameraHardware(Context context) {
+//		if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+//			// this device has a camera
+//			return true;
+//		} else {
+//			// no camera on this device
+//			return false;
+//		}
+//	}
 
 	public double roundTwoDecimals(double d) {
 		DecimalFormat df = new DecimalFormat("#.0");
@@ -351,8 +356,8 @@ public class SensingActivity extends Activity implements SensorEventListener {
 				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 				isLandscape = true;
 			}
-			if (mPreview != null)
-				mPreview.setCameraDisplayOrientation(isLandscape ? 0 : 90);
+//			if (mPreview != null)
+//				mPreview.setCameraDisplayOrientation(isLandscape ? 0 : 90);
 			editor.putBoolean("landscapeMode", isLandscape);
 			editor.commit();
 			return true;
@@ -367,7 +372,7 @@ public class SensingActivity extends Activity implements SensorEventListener {
 			if (resultCode == RESULT_OK) {
 				host = prefs.getString(getString(R.string.ipAddressKey), "255.255.255.255");
 				sensorPort = Integer.parseInt(prefs.getString(getString(R.string.sensorPortKey), "9001"));
-				cameraPort = Integer.parseInt(prefs.getString(getString(R.string.cameraPortKey), "9002"));
+//				cameraPort = Integer.parseInt(prefs.getString(getString(R.string.cameraPortKey), "9002"));
 			}
 		default:
 			break;
