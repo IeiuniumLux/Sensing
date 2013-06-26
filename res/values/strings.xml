@@ -5,56 +5,14 @@
     <string name="activity_title">Sensing</string>
     <string name="app_icon_label">Sensing</string>
 
-    <!-- Sensors -->
-    <string name="gravitySensorLabel">Gravity Sensor</string>
-    <string name="accelerometerMagnetometerLabel">Accelerometer &amp; Magnetometer</string>
-    <string name="gravityMagnetometerLabel">Gravity Sensor &amp; Magnetometer</string>
-    <string name="rotationVectorLabel">Rotation Vector</string>
-    <string name="selectedSensorLabel">Selected Sensor:</string>
-    <string name="orientationLabel">Orientation:</string>
-    <string name="yawLabel">Heading:</string>
-    <string name="pitchLabel">Pitch:</string>
-    <string name="rollLabel">Roll:</string>
+    <string name="pitchLabel">Pitch (X-axis rotation):</string>
+    <string name="rollLabel">Roll (Y-axis rotation):</string>
     <string name="xAxisLabel">X Axis:</string>
     <string name="yAxisLabel">Y Axis:</string>
     <string name="zAxisLabel">Z Axis:</string>
-    <string name="proximityLabel">Proximity (cm):</string>
-    <string name="speakOrientationLabel">Speak Orientation</string>
-    <string name="speakMovementDetectedLabel">Speak Movement Detected</string>
-    <string name="sendingDataON">Stop Sending Packets</string>
-    <string name="sendingDataOFF">Start Sending Packets</string>
-    <string name="rotationMatrixGenFailureMessage">Failed to generate rotation matrix</string>
-    <string name="accelerometerLabel">Accelerometer</string>
-    <string name="linearAccelerationSensorLabel">Linear Acceleration Sensor</string>
+    <string name="sendingDataON">Stop</string>
+    <string name="sendingDataOFF">Start</string>
 
-    <!-- an error title for a dialog -->
-    <string name="d_error">Error</string>
-    <string name="d_info">Info</string>
-    <string name="d_sent">Sent</string>
-    <string name="d_exit">Exit</string>
-    <string name="d_ok">OK</string>
-
-    <!-- pattern rich world sensing -->
-    <string name="imageSectionHeading">Image Processing</string>
-
-    <!-- Sensors -->
-    <string name="launchSensorList">Sensor List</string>
-    <string name="launchNorthFinder">North Finder</string>
-    <string name="launchDetermineOrientation">Determine Orientation</string>
-    <string name="launchDetermineMovement">Determine Movement</string>
-    <string name="launchDetermineAltitude">Determine Altitude</string>
-    <string name="btn_speech_start_service">Start</string>
-    <string name="btn_speech_stop_service">Stop</string>
-    <!-- select type -->
-
-    <string name="btn_start_motion_activate">Start Movement Activator</string>
-    <string name="btn_start">Start</string>
-    <string name="btn_stop">Stop</string>
-    <string name="sensorSectionHeading">Physical Sensors</string>
-
-    <!-- AOA -->
-    <string name="no_device">Please connect the accessory.</string>
-    <string name="set_parameters_failed">Set parameters failed: </string>
     <string name="orientation">Portrait/Landscape</string>
     <string name="settings">Settings</string>
     <string name="default_ipAddress">255.255.255.255</string>

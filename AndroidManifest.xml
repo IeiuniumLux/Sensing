@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="10"
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -34,8 +34,8 @@
         <activity
             android:name=".SensingActivity"
             android:configChanges="orientation|screenSize"
-            android:label="@string/activity_title"
-            android:theme="@style/Theme.NoBackground" >
+            android:label="@string/activity_title">
+            <!-- android:theme="@style/Theme.NoBackground"> See Google I/O 2009 - ...Make your Android UI Fast and Efficient -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

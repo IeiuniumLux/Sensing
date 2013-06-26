@@ -226,8 +226,8 @@ public class CameraPreview extends SurfaceView implements PreviewCallback, Surfa
 		int[] pixels = new int[size];
 		int u, v, y1, y2, y3, y4;
 
-		// i percorre os Y and the final pixels
-		// k percorre os pixles U e V
+		// i percorre dos Y and the final pixels
+		// k percorre dos pixles U e V
 		for (int i = 0, k = 0; i < size; i += 2, k += 2) {
 			y1 = data[i] & 0xff;
 			y2 = data[i + 1] & 0xff;

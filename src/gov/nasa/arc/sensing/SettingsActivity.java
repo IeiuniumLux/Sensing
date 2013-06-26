@@ -18,7 +18,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 		@Override
 		public boolean onPreferenceChange(Preference preference, Object newValue) {
 			// Check that the string is an integer
-			if (newValue != null && newValue.toString().length() > 0 && newValue.toString().matches("\\d*")) {
+			if (newValue != null && newValue.toString().length() > 0 && newValue.toString().matches("\\df*")) {
 				return true;
 			}
 			// If now create a message to the user
